@@ -1,0 +1,22 @@
+{
+  "name": "n8js-example-app",
+  "version": "1.0.0",
+  "description": "Test Node JS app for FRB build process",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --ignore node_modules/ app.js",
+    "start": "node app.js"
+  },
+  "keywords": [
+    "test"
+  ],
+  "author": "Mike M",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.4"
+  }
+}

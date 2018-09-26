@@ -25,12 +25,15 @@ pipeline {
 		stage ('git'){
 			steps {
 				checkout([
-					$class: 'GitSCM',
+/*					$class: 'GitSCM',
 					branches: scm.branches,
 					doGenerateSubmoduleConfigurations: false,
 					extensions: scm.extensions + [[$class: 'SubmoduleOption', disableSubmodules: false, recursiveSubmodules: true, reference: '', trackingSubmodules: false]],
 					submoduleCfg: [],
-					userRemoteConfigs: scm.userRemoteConfigs])
+					userRemoteConfigs: scm.userRemoteConfigs]) */
+
+					checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/mcdmike74/n8js-example-app.git']]])
+
 
 //					git 'https://github.com/mcdmike74/n8js-example-app.git'
 

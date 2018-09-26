@@ -58,10 +58,13 @@ pipeline {
 	post {
 		always {
 			// clean up workspace
-			deleteDir()
+			echo "Did it work?"
+			// deleteDir()
+		}
+		
+		success {
+			echo "Success!"
 		}
 	}
-		
-		success {}
 
 } // pipeline

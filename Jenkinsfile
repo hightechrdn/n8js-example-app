@@ -39,9 +39,6 @@ pipeline {
 						echo hello world
 						id; ls -lR; ls -l /var/run/
 				//		s2i build . 172.30.1.1:5000/jenkins/nodejs8-builder-rhel7 n8js-example-app-builder-test:${env.BUILD_ID} --exclude '(^|/)\\.git(/|\$)|(J|j)enkinsfile'
- echo(env.getEnvironment().collect({environmentVariable ->  "${environmentVariable.key} = ${environmentVariable.value}"}).join("\n"^))
-echo "------------------"
- echo(System.getenv().collect({environmentVariable ->  "${environmentVariable.key} = ${environmentVariable.value}"}).join("\n"))
 echo "------------------"
 def envs = sh(returnStdout: true, script: 'env').split('\n')
 envs.each { name  ->

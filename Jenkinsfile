@@ -34,7 +34,7 @@ pipeline {
 					sh """
 						echo hello world
 						id; ls -lR; ls -l /var/run/
-						s2i build . 172.30.1.1:5000/jenkins/nodejs8-builder-rhel7 n8js-example-app-builder-test:v0.1 --exclude '(^|/)\\.git(/|$)|(J|j)enkinsfile'
+						s2i build . 172.30.1.1:5000/jenkins/nodejs8-builder-rhel7 n8js-example-app-builder-test:v0.1 --exclude '(^|/)\\.git(/|\$)|(J|j)enkinsfile'
 					"""
 				}	// script
 			} // steps

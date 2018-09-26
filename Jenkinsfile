@@ -38,7 +38,29 @@ pipeline {
 					sh """
 						echo hello world
 						id; ls -lR; ls -l /var/run/
-						s2i build . 172.30.1.1:5000/jenkins/nodejs8-builder-rhel7 n8js-example-app-builder-test:${env.BUILD_ID} --exclude '(^|/)\\.git(/|\$)|(J|j)enkinsfile'
+				//		s2i build . 172.30.1.1:5000/jenkins/nodejs8-builder-rhel7 n8js-example-app-builder-test:${env.BUILD_ID} --exclude '(^|/)\\.git(/|\$)|(J|j)enkinsfile'
+ echo(env.getEnvironment().collect({environmentVariable ->  "${environmentVariable.key} = ${environmentVariable.value}"}).join("\n"^))
+echo "------------------"
+ echo(System.getenv().collect({environmentVariable ->  "${environmentVariable.key} = ${environmentVariable.value}"}).join("\n"))
+echo "------------------"
+def envs = sh(returnStdout: true, script: 'env').split('\n')
+envs.each { name  ->
+  println "Name: $name"
+}
+echo "------------------"
+envtext= "printenv".execute().text
+envtext.split('\n').each
+{   envvar=it.split("=")
+    println envvar[0]+" is "+envvar[1]
+}
+echo "-----------------"
+sh 'env > env.txt'
+        String[] envs = readFile('env.txt').split("\r?\n")
+
+        for(String vars: envs){
+            println(vars)
+        }
+echo "----------------"
 					"""
 				}	// script
 			} // steps

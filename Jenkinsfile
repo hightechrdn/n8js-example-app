@@ -21,9 +21,9 @@ pipeline {
 			name: 'EMAIL_RECIPIENTS')
 	} */
     
-/*	environment {
-		VARIABLE = 'test'
-	} */
+	environment {
+		TAG = ${GIT_REVISION:0:7}
+	}
 
 	stages {
 		stage ('Checkout'){
@@ -39,6 +39,7 @@ pipeline {
 					sh """
 						echo hello world
 						id; ls -lR; ls -l /var/run/
+                        echo ${TAG}
                         env
 					"""
 				}	// script

@@ -22,7 +22,7 @@ pipeline {
 	} */
     
 	environment {
-		TAG = ${GIT_REVISION:0:7}
+		TAG = ${GIT_COMMIT:0:7}
 	}
 
 	stages {

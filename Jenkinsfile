@@ -1,8 +1,8 @@
 pipeline {
 
-	options {
+/*	options {
 		timestamps()
-	}
+	} */
 
 	agent {
 		node {

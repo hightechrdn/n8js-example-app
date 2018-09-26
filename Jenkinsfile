@@ -24,7 +24,7 @@ pipeline {
 /*	environment {
 	} */
 
-	def TAG = "${GIT_COMMIT:0:7}"
+	def TAG = ${GIT_COMMIT,length=7}
 
 	stages {
 		stage ('Checkout'){

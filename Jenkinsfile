@@ -60,8 +60,8 @@ pipeline {
 			// clean up workspace
 			deleteDir()
 		}
+	}
 		
 		success {}
-
 
 } // pipeline

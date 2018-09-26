@@ -39,21 +39,8 @@ pipeline {
 					sh """
 						echo hello world
 						id; ls -lR; ls -l /var/run/
+                        env
 					"""
-echo "------------------"
-envtext= "printenv".execute().text
-envtext.split('\n').each
-{   envvar=it.split("=")
-    println envvar[0]+" is "+envvar[1]
-}
-echo "-----------------"
-sh 'env > env.txt'
-        String[] envs = readFile('env.txt').split("\r?\n")
-
-        for(String vars: envs){
-            println(vars)
-        }
-echo "----------------"
 				}	// script
 			} // steps
 		} // stage:Build Image

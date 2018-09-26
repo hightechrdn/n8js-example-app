@@ -39,6 +39,7 @@ pipeline {
 					sh """
 						echo hello world
 						id; ls -lR; ls -l /var/run/
+					"""
 echo "------------------"
 envtext= "printenv".execute().text
 envtext.split('\n').each
@@ -53,7 +54,6 @@ sh 'env > env.txt'
             println(vars)
         }
 echo "----------------"
-					"""
 				}	// script
 			} // steps
 		} // stage:Build Image

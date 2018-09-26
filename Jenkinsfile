@@ -21,9 +21,10 @@ pipeline {
 			name: 'EMAIL_RECIPIENTS')
 	} */
     
-	environment {
-		def TAG = "${GIT_COMMIT:0:7}"
-	}
+/*	environment {
+	} */
+
+	def TAG = "${GIT_COMMIT:0:7}"
 
 	stages {
 		stage ('Checkout'){

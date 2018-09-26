@@ -1,5 +1,9 @@
 pipeline {
 
+	options {
+		timestamps()
+	}
+
 	agent {
 		node {
 			label 'jenkins-slave-s2i-rhel7' 

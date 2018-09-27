@@ -22,7 +22,7 @@ pipeline {
 	} */
     
 	environment {
-def devTag = ${GIT_REVISION,length=8}
+        devTag = ${GIT_REVISION,length=8}
 	} 
 
 	stages {

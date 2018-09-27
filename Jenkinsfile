@@ -21,11 +21,9 @@ pipeline {
 			name: 'EMAIL_RECIPIENTS')
 	} */
     
-/*	environment {
-	} */
-
-
+	environment {
 def = ${GIT_REVISION,length=8}
+	} 
 
 	stages {
 		stage ('Checkout'){

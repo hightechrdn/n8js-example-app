@@ -9,10 +9,10 @@ echo "mark 0"
 
 
 echo "mark 1"
-	def gitCommit = env['GIT_COMMIT']
+/*	def gitCommit = env['GIT_COMMIT']
 	def shortGitCommit = gitCommit[0..7]
     echo ${pa}
-
+*/
 echo "mark 2"
 	tool name: 'oc3.9', type: 'oc'
 

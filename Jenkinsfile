@@ -4,8 +4,8 @@ node('jenkins-slave-s2i-rhel7') {
 
 echo "mark 0"
 	stage('Checkout Source') {
-def scmVars = checkout scm
-	 // checkout scm
+    //    def scmVars = checkout scm
+checkout([$class: 'GitSCM', branches: [[name: 'branchtest1']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/mcdmike74/n8js-example-app.git']]])
 	}
 
 sh "env"

@@ -35,7 +35,7 @@ pipeline {
 				//		s2i build . 172.30.1.1:5000/jenkins/nodejs8-builder-rhel7 n8js-example-app-builder-test:${env.BUILD_ID} --exclude '(^|/)\\.git(/|\$)|(J|j)enkinsfile'
 		stage('Build Image') {
 			steps {
-	                def devTag = ${GIT_COMMIT,length=7}
+	                def devTag = ${GIT_REVISION,length=8}
 				script {
                     echo "${devTag}"
 					sh """

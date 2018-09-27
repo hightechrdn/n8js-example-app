@@ -6,16 +6,16 @@ node('jenkins-slave-s2i-rhel7') {
 	  checkout scm
 	}
 
-	def env = build.getEnvironment()
+	// def env = build.getEnvironment()
 	def gitCommit = env['GIT_COMMIT']
-	def shortGitCommit = gitCommit[0..6]
+	def shortGitCommit = gitCommit[0..7]
 
-	def pa = new ParametersAction([
+	/* def pa = new ParametersAction([
 	  new StringParameterValue("SHORT_GIT_COMMIT", shortGitCommit)
 	])
 
 	// add variable to current job
-	build.addAction(pa)
+	build.addAction(pa) */
 
 	tool name: 'oc3.9', type: 'oc'
 

@@ -7,6 +7,7 @@ echo "mark 0"
 	  checkout scm
 	}
 
+sh "env"
 
 echo "mark 1"
 /*	def gitCommit = env['GIT_COMMIT']

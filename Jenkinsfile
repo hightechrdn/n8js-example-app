@@ -4,7 +4,8 @@ node('jenkins-slave-s2i-rhel7') {
 
 echo "mark 0"
 	stage('Checkout Source') {
-	  checkout scm
+def scmVars = checkout scm
+	 // checkout scm
 	}
 
 sh "env"

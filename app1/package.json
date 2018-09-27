@@ -1,8 +1,8 @@
 {
-  "name": "n8js-example-master_app",
+  "name": "n8js-example-app1",
   "version": "1.0.0",
   "description": "Test Node JS app for FRB build process",
-  "main": "master_app.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon --ignore node_modules/ app.js",

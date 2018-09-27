@@ -1,6 +1,6 @@
-node('jenkins-slave-s2i-rhel7') {
-
 import hudson.model.*
+
+node('jenkins-slave-s2i-rhel7') {
 
 	stage('Checkout Source') {
 	  checkout scm

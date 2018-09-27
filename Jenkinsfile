@@ -24,7 +24,6 @@ pipeline {
 /*	environment {
 	} */
 
-	def TAG = ${GIT_COMMIT,length=7}
 
 	stages {
 		stage ('Checkout'){
@@ -37,6 +36,8 @@ pipeline {
 		stage('Build Image') {
 			steps {
 				script {
+	                def devTag = ${GIT_COMMIT,length=7}
+                    echo "${devTag}"
 					sh """
 						echo hello world
 						id; ls -lR; ls -l /var/run/
